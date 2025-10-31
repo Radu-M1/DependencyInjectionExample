@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"] - MyApp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/StyleSheet.css" asp-append-version="true" />
+</head>
+
+<body>
+    <header class="header">
+        <h1>MyApp</h1>
+    </header>
+
+    <nav class="navbar">
+        <ul>
+            <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+            <li><a asp-controller="Home" asp-action="About">About</a></li>
+        </ul>
+    </nav>
+
+    <main class="page-content container">
+        @RenderBody()
+    </main>
+
+    <footer class="footer-content">
+        <p>&copy; @DateTime.Now.Year - MyApp</p>
+    </footer>
+
+    @RenderSection("Scripts", required: false)
+</body>
+
+</html>
