@@ -1,15 +1,17 @@
 using Microsoft.AspNetCore.Mvc;
-using Services;
+// using Services;
+using ServiceContracts;
 
 namespace DependencyInjectionExample.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly CitiesService _citiesService;
+        private readonly ICitiesService _citiesService;
 
         public HomeController()
         {
-            _citiesService = new CitiesService(); // here you must use Dependency Injection instead
+            // _citiesService = new CitiesService(); // here you must use Dependency Injection instead
+            _citiesService = null;
         }
         [Route("/")]
         public IActionResult Index()
