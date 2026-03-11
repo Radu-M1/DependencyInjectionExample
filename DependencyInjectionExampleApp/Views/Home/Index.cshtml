@@ -6,6 +6,13 @@
 <h1>@ViewData["Title"]</h1>
 <p>Welcome to the Home page!</p>
 
+<h3>Service Instance IDs:</h3>
+<ul class="list">
+    <li>Instance 1 ID: @ViewBag.InstanceId_CitiesService_1</li>
+    <li>Instance 2 ID: @ViewBag.InstanceId_CitiesService_2</li>
+    <li>Instance 3 ID: @ViewBag.InstanceId_CitiesService_3</li>
+</ul>
+
 <h3>Cities:</h3>
 <ul class="list">
     @foreach (var city in Model)
