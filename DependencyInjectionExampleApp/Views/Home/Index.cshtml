@@ -1,4 +1,6 @@
 @model List<string>
+@inject ICitiesService citiesServiceInView;
+
 @{
     ViewData["Title"] = "Home";
 }
@@ -12,11 +14,15 @@
     <li>Instance 2 ID: @ViewBag.InstanceId_CitiesService_2</li>
     <li>Instance 3 ID: @ViewBag.InstanceId_CitiesService_3</li>
     <li>Instance Scoped ID: @ViewBag.InstanceId_CitiesService_InScope</li>
+    <li>CityServiceInView ID: @citiesServiceInView.ServiceId</li>
 </ul>
 
 <h3>Cities:</h3>
+@{
+    List<string> citiesFromServiceInView = citiesServiceInView.GetCities();
+}
 <ul class="list">
-    @foreach (var city in Model)
+    @foreach (string city in citiesFromServiceInView)
     {
         <li>@city</li>
     }
